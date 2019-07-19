@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+.products-container {
+    position: relative;
+
+    .image-container {
+        width: 550px;
+        height: 550px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .design-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .product-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .inner-design-container {
+        position: absolute;
+        width: 200px;
+        height: 280px;
+        top: 130px;
+        left: 173px;
+    }
+}
+
+.designs-container {
+    position: relative;    
+
+    .designs-grid {
+        width: 420px;
+        height: 550px;
+        position: relative;
+        overflow-y: scroll;
+        box-shadow:  3px 3px 5px 6px #ccc;
+    }
+
+    .design-box {
+        width: 200px;
+        height: 200px;
+        float: left;
+        padding: 5px;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+
+    .design-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .design-image:after, .design-image:before {
+        position:absolute;
+        opacity:0;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+    }
+    .design-image:after {
+        content:'\A';
+        width:100%; height:100%;
+        top:0; left:0;
+        background:rgba(0,0,0,0.6);
+    }
+    .design-image:before {
+        content: attr(data-content);
+        width:100%;
+        color:#fff;
+        z-index:1;
+        bottom:0;
+        padding:4px 10px;
+        text-align:center;
+        background:red;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+    }
+    .design-image:hover:after, .design-image:hover:before {
+        opacity:1;
+    }
+}

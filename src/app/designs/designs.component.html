@@ -1,0 +1,7 @@
+<div class="designs-container">
+    <div class="designs-grid">
+        <div data-content="Select" class="design-box" *ngFor="let item of designJson">
+            <img class="design-image" (click)="getDesignName(item.name)" src="{{item.path}}">
+        </div>
+    </div>
+</div>
